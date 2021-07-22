@@ -1,6 +1,5 @@
 package dordonez.servers.fotos_rest_srv;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +25,7 @@ public class RestControll {
 	
 	@GetMapping("/fotos")
 	public List<Foto> getFotos() {
-		List<Foto> lista = new ArrayList<>();
-		repository.findAll().forEach(lista::add);
-		return lista;
+		return repository.findAll();
 	}	
 	
 	@GetMapping("/fotos/list")
